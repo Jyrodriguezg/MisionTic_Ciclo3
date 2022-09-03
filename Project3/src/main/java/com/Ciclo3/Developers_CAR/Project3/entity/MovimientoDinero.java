@@ -1,4 +1,4 @@
-package com.Ciclo3.Developers_CAR.Project3._entity;
+package com.Ciclo3.Developers_CAR.Project3.entity;
 
 public class MovimientoDinero {
     private long montoDinero;

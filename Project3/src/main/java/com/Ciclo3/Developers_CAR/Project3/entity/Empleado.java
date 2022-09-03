@@ -1,10 +1,10 @@
-package com.Ciclo3.Developers_CAR.Project3._entity;
+package com.Ciclo3.Developers_CAR.Project3.entity;
 
 public class Empleado {
     private String nombreEmpleado;
     private String correoEmpleado;
     private String empresaEmpleado;
-    private String rolEmpleado;
+    private Rol rolEmpleado;
 
     public Empleado() {
     }
@@ -33,11 +33,5 @@ public class Empleado {
         this.empresaEmpleado = empresaEmpleado;
     }
 
-    public String getRolEmpleado() {
-        return rolEmpleado;
-    }
 
-    public void setRolEmpleado(String rolEmpleado) {
-        this.rolEmpleado = rolEmpleado;
-    }
 }

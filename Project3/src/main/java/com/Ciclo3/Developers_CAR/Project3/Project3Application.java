@@ -1,8 +1,8 @@
 package com.Ciclo3.Developers_CAR.Project3;
 
-import com.Ciclo3.Developers_CAR.Project3._entity.Empleado;
-import com.Ciclo3.Developers_CAR.Project3._entity.Empresa;
-import com.Ciclo3.Developers_CAR.Project3._entity.MovimientoDinero;
+import com.Ciclo3.Developers_CAR.Project3.entity.Empleado;
+import com.Ciclo3.Developers_CAR.Project3.entity.Empresa;
+import com.Ciclo3.Developers_CAR.Project3.entity.MovimientoDinero;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -26,11 +26,11 @@ public abstract class Project3Application {
 		empleado.setNombreEmpleado("Jan sultano");
 		empleado.setEmpresaEmpleado("Developers_CAR");
 		empleado.setCorreoEmpleado("jsultano@Developerscar.com");
-		empleado.setRolEmpleado("Administrador");
+
 		System.out.println("el nombre del empleado es:" + empleado.getNombreEmpleado());
 		System.out.println("La empresa del empleado es: " + empleado.getEmpresaEmpleado());
 		System.out.println("El correo del empleado es: " + empleado.getCorreoEmpleado());
-		System.out.println("El rol del empleado es " + empleado.getRolEmpleado());
+
 		movimientodinero.setConcepto("facturas de maquinaria nueva");
 		movimientodinero.setMontoDinero(1000000);
 		System.out.println("El concepto del pago es: " + movimientodinero.getConcepto());
