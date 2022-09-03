@@ -1,9 +1,19 @@
 package com.Ciclo3.Developers_CAR.Project3.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="Empresa")
 public class Empresa {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "nombreEmpresa", nullable = false)
     private String nombreEmpresa;
+    @Column(name = "direccionEmpresa", nullable = false)
     private String direccionEmpresa;
+    @Column(name = "telefonoEmpresa", nullable = false)
     private String telefonoEmpresa;
+    @Column(name = "nitEmpresa", unique = true)
     private String nitEmpresa;
 
     public Empresa() {

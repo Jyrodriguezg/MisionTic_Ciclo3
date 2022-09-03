@@ -24,11 +24,9 @@ public abstract class Project3Application {
 		System.out.println("El telefono de la empresa es: " + empresa.getTelefonoEmpresa());
 		System.out.println("El nit de la empresa es: " + empresa.getNitEmpresa());
 		empleado.setNombreEmpleado("Jan sultano");
-		empleado.setEmpresaEmpleado("Developers_CAR");
 		empleado.setCorreoEmpleado("jsultano@Developerscar.com");
 
 		System.out.println("el nombre del empleado es:" + empleado.getNombreEmpleado());
-		System.out.println("La empresa del empleado es: " + empleado.getEmpresaEmpleado());
 		System.out.println("El correo del empleado es: " + empleado.getCorreoEmpleado());
 
 		movimientodinero.setConcepto("facturas de maquinaria nueva");
