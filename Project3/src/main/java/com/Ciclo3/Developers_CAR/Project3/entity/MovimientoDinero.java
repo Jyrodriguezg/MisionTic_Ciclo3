@@ -1,9 +1,11 @@
 package com.Ciclo3.Developers_CAR.Project3.entity;
+import javax.persistence.*;
 
 public class MovimientoDinero {
     private long montoDinero;
     private String concepto;
     private String usuarioRegistro;
+
 
     public MovimientoDinero() {
     }
