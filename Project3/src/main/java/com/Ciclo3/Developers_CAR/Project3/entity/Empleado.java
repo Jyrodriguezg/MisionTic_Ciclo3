@@ -5,21 +5,32 @@ import jdk.jfr.Enabled;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Empleado")
+@Table(name="Empleados")
 public class Empleado {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_Empleado", nullable = false)
+    private long idEmpleado;
     @Column(name = "nombreEmpleado", nullable = false)
     private String nombreEmpleado;
-    @Column(name = "correoEmpleado", unique = true)
+    @Column(name = "correoEmpleado", unique = true, nullable = false)
     private String correoEmpleado;
     @ManyToOne
-    @JoinColumn(name = "empresaEmpleado")
+    @JoinColumn(name = "empresaEmpleado", unique = true, nullable = false)
     private Empresa empresaEmpleado;
-    @Column(name = "rolEmpleado")
+    @Column(name = "rolEmpleado", nullable = false)
     private Rol rolEmpleado;
 
     public Empleado() {
+    }
+
+    public long getIdEmpleado() {
+        return idEmpleado;
+    }
+
+    public void setIdEmpleado(long idEmpleado) {
+        this.idEmpleado = idEmpleado;
     }
 
     public String getNombreEmpleado() {
