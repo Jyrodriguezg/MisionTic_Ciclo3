@@ -8,7 +8,7 @@ public class    Empresa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_Empresa", nullable = false)
     private long idEmpresa;
-    @Column(name = "nombreEmpresa", nullable = false)
+    @Column(name = "nombreEmpresa", unique = true,nullable = false)
     private String nombreEmpresa;
     @Column(name = "direccionEmpresa", nullable = false)
     private String direccionEmpresa;
@@ -59,4 +59,5 @@ public class    Empresa {
     public void setNitEmpresa(String nitEmpresa) {
         this.nitEmpresa = nitEmpresa;
     }
+
 }

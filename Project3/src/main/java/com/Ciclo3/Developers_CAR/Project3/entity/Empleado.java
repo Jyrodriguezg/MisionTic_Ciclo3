@@ -21,7 +21,6 @@ public class Empleado {
     private Empresa empresaEmpleado;
     @Column(name = "rolEmpleado", nullable = false)
     private Rol rolEmpleado;
-
     public Empleado() {
     }
 
@@ -65,4 +64,5 @@ public class Empleado {
     public void setRolEmpleado(Rol rolEmpleado) {
         this.rolEmpleado = rolEmpleado;
     }
+
 }

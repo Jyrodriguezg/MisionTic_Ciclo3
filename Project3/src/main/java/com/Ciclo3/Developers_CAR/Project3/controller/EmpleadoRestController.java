@@ -13,23 +13,23 @@ public class EmpleadoRestController {
     @Autowired
     private IEmpleadoService empleadoService;
 
-    @GetMapping("/rol/{id}")
+    @GetMapping("/users/{id}")
     public Empleado findById(@PathVariable int id){
         return empleadoService.findById(id);
     }
-    @GetMapping("/rol")
+    @GetMapping("/users")
     public List<Empleado> findAll() {
         return empleadoService.findAll();
     }
-    @PostMapping("/rol")
+    @PostMapping("/users")
     public Empleado createEmpleado(@RequestBody Empleado empleado){
         return empleadoService.createEmpleado(empleado);
     }
-    @PutMapping("/rol/{id}")
+    @PutMapping("/users/{id}")
     public Empleado updateEmpleado(@PathVariable int id, @RequestBody Empleado empleado){
         return empleadoService.updateEmpleado(id, empleado);
     }
-    @DeleteMapping("/rol/{id}")
+    @DeleteMapping("/users/{id}")
     public void deleteEmpleado(@PathVariable int id){
         empleadoService.deleteEmpleado(id);
     }
