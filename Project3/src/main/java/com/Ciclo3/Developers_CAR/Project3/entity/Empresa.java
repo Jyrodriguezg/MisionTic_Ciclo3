@@ -1,12 +1,31 @@
 package com.Ciclo3.Developers_CAR.Project3.entity;
+import javax.persistence.*;
 
-public class Empresa {
+@Entity
+@Table(name="Empresas")
+public class    Empresa {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_Empresa", nullable = false)
+    private long idEmpresa;
+    @Column(name = "nombreEmpresa", nullable = false)
     private String nombreEmpresa;
+    @Column(name = "direccionEmpresa", nullable = false)
     private String direccionEmpresa;
+    @Column(name = "telefonoEmpresa", nullable = false)
     private String telefonoEmpresa;
+    @Column(name = "nitEmpresa", unique = true, nullable = false)
     private String nitEmpresa;
 
     public Empresa() {
+    }
+
+    public long getIdEmpresa() {
+        return idEmpresa;
+    }
+
+    public void setIdEmpresa(long idEmpresa) {
+        this.idEmpresa = idEmpresa;
     }
 
     public String getNombreEmpresa() {
