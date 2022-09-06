@@ -22,6 +22,9 @@ public class Empleado {
     @Column(name = "rolEmpleado", nullable = false)
     private Rol rolEmpleado;
 
+    @ManyToOne
+    @JoinColumn(name = "movimientos", nullable = false)
+    private MovimientoDinero movimientos;
     public Empleado() {
     }
 
@@ -64,5 +67,13 @@ public class Empleado {
 
     public void setRolEmpleado(Rol rolEmpleado) {
         this.rolEmpleado = rolEmpleado;
+    }
+
+    public MovimientoDinero getMovimientos() {
+        return movimientos;
+    }
+
+    public void setMovimientos(MovimientoDinero movimientos) {
+        this.movimientos = movimientos;
     }
 }

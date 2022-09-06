@@ -12,23 +12,23 @@ public class EmpresaRestController {
 
     private iEmpresaService  empresaService;
 
-    @GetMapping("/rol/{id}")
+    @GetMapping("/enterprises/{id}")
     public Empresa FindById(@PathVariable int id) {
         return empresaService.FindById(id);
     }
-    @GetMapping("/rol")
+    @GetMapping("/enterprises")
     public List<Empresa> FindAll(){
         return empresaService.FindAll();
     }
-    @PostMapping("/rol")
+    @PostMapping("/enterprises")
     public Empresa createdEmpresa(@RequestBody Empresa empresa){
         return empresaService.createdEmpresa(empresa);
     }
-    @PutMapping("/rol/{id}")
+    @PutMapping("/enterprises/{id}")
     public Empresa UpdateEmpresa(@PathVariable int id , @RequestBody Empresa empresa){
         return empresaService.UpdateEmpresa(id,empresa);
     }
-    @DeleteMapping("/rol/{id}")
+    @DeleteMapping("/enterprises/{id}")
     public void deleteEmpresa(@PathVariable int id){
         empresaService.deleteEmpresa(id);
     }

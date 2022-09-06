@@ -13,23 +13,23 @@ public class MovimientoDineroRestController {
 
     private IMovimientoDineroService movimientoDineroService;
 
-    @GetMapping("/rol/{id}")
-    public MovimientoDinero FindById(@PathVariable int id) {
-        return movimientoDineroService.FindById(id);
-    }
-    @GetMapping("/rol")
+   // @GetMapping("/enterprises/{id}/movements")
+    // public MovimientoDinero FindById(@PathVariable int id) {
+     //   return movimientoDineroService.FindById(id);
+    //}
+    @GetMapping("/enterprises/{id}/movements")
     public List<MovimientoDinero> FindAll(){
         return movimientoDineroService.FindAll();
     }
-    @PostMapping("/rol")
+    @PostMapping("/enterprises/{id}/movements")
     public MovimientoDinero createdMovimientoDinero(@RequestBody MovimientoDinero movimiento){
         return movimientoDineroService.createdMovimientoDinero(movimiento);
     }
-    @PutMapping("/rol/{id}")
+    @PutMapping("/enterprises/{id}/movements")
     public MovimientoDinero UpdateMovimientoDinero(@PathVariable int id , @RequestBody MovimientoDinero movimiento){
         return movimientoDineroService.UpdateMovimientoDinero(id,movimiento);
     }
-    @DeleteMapping("/rol/{id}")
+    @DeleteMapping("/enterprises/{id}/movements")
     public void deleteMovimientoDinero(@PathVariable int id){
         movimientoDineroService.deleteMovimientoDinero(id);
     }

@@ -15,3 +15,4 @@ public interface IEmpleadoService {
 
     public void deleteEmpleado(int id);
 }
+

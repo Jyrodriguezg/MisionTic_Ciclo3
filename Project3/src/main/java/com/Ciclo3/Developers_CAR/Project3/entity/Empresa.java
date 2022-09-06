@@ -8,7 +8,7 @@ public class    Empresa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_Empresa", nullable = false)
     private long idEmpresa;
-    @Column(name = "nombreEmpresa", nullable = false)
+    @Column(name = "nombreEmpresa", unique = true,nullable = false)
     private String nombreEmpresa;
     @Column(name = "direccionEmpresa", nullable = false)
     private String direccionEmpresa;
@@ -16,6 +16,13 @@ public class    Empresa {
     private String telefonoEmpresa;
     @Column(name = "nitEmpresa", unique = true, nullable = false)
     private String nitEmpresa;
+    @ManyToOne
+    @JoinColumn(name = "empleados", nullable = false)
+    private Empleado empleados;
+
+    @ManyToOne
+    @JoinColumn(name = "movimientos", nullable = false)
+    private MovimientoDinero movimientos;
 
     public Empresa() {
     }
@@ -58,5 +65,21 @@ public class    Empresa {
 
     public void setNitEmpresa(String nitEmpresa) {
         this.nitEmpresa = nitEmpresa;
+    }
+
+    public Empleado getEmpleados() {
+        return empleados;
+    }
+
+    public void setEmpleados(Empleado empleados) {
+        this.empleados = empleados;
+    }
+
+    public MovimientoDinero getMovimientos() {
+        return movimientos;
+    }
+
+    public void setMovimientos(MovimientoDinero movimientos) {
+        this.movimientos = movimientos;
     }
 }
