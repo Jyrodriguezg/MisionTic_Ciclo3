@@ -15,10 +15,8 @@ public class MovimientoDinero {
     @JoinColumn(name = "Usuario", nullable = false)
     private Empleado usuarioRegistro;
     @ManyToOne
-    @JoinColumn(name = "Empresa", nullable = false)
-    private Empresa Empresa;
-
-
+    @JoinColumn(name = "empresa", nullable = false)
+    private Empresa empresa;
     public MovimientoDinero() {
     }
 
@@ -54,11 +52,4 @@ public class MovimientoDinero {
         this.usuarioRegistro = usuarioRegistro;
     }
 
-    public com.Ciclo3.Developers_CAR.Project3.entity.Empresa getEmpresa() {
-        return Empresa;
-    }
-
-    public void setEmpresa(com.Ciclo3.Developers_CAR.Project3.entity.Empresa empresa) {
-        Empresa = empresa;
-    }
 }
