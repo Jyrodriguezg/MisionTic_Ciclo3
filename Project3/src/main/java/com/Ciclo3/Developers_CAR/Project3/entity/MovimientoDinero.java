@@ -20,6 +20,14 @@ public class MovimientoDinero {
     public MovimientoDinero() {
     }
 
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
     public long getId_movientos() {
         return id_movientos;
     }

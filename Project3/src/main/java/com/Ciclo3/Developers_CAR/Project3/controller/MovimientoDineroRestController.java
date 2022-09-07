@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@RestController
+@RequestMapping("/api")
 public class MovimientoDineroRestController {
     @Autowired
 
@@ -18,7 +19,7 @@ public class MovimientoDineroRestController {
      //   return movimientoDineroService.FindById(id);
     //}
     @GetMapping("/enterprises/{id}/movements")
-    public List<MovimientoDinero> FindAll(){
+    public List<MovimientoDinero> FindAll(@PathVariable int id){
         return movimientoDineroService.FindAll();
     }
     @PostMapping("/enterprises/{id}/movements")
