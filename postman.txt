@@ -1,0 +1,30 @@
+Empresas
+    {
+        "idEmpresa": 1,
+        "nombreEmpresa": "DevelopCAR",
+        "direccionEmpresa": "Av siempreviva 123",
+        "telefonoEmpresa": "54963",
+        "nitEmpresa": "987654321"
+    }
+Empleado
+{	
+	"idEmpleado": 1,
+	"nombreEmpleado": "Juan",
+	"correoEmpleado": "Juan@CAR.com",
+	"empresaEmpleado": {
+ "idEmpresa": 1,
+        "nombreEmpresa": "DevelopCAR",
+        "direccionEmpresa": "Av siempreviva 123",
+        "telefonoEmpresa": "54963",
+        "nitEmpresa": "987654321"
+        },
+    "rolEmpleado": 0
+}
+
+    {
+        "idEmpleado": 1,
+        "nombreEmpleado": "Juan",
+        "correoEmpleado": "Juan@CAR.com",
+        "empresaEmpleado": null,
+        "rolEmpleado": "Admin"
+    }

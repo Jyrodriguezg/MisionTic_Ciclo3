@@ -1,5 +1,6 @@
 package com.Ciclo3.Developers_CAR.Project3.entity;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="Empresas")
@@ -8,16 +9,25 @@ public class    Empresa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_Empresa", nullable = false)
     private long idEmpresa;
-    @Column(name = "nombreEmpresa", unique = true,nullable = false)
+    @Column(name = "nombreEmpresa")
     private String nombreEmpresa;
-    @Column(name = "direccionEmpresa", nullable = false)
+    @Column(name = "direccionEmpresa")
     private String direccionEmpresa;
-    @Column(name = "telefonoEmpresa", nullable = false)
+    @Column(name = "telefonoEmpresa")
     private String telefonoEmpresa;
-    @Column(name = "nitEmpresa", unique = true, nullable = false)
+    @Column(name = "nitEmpresa")
     private String nitEmpresa;
-
+    @OneToMany (mappedBy = "empresa")
+    List <MovimientoDinero> movimiento;
     public Empresa() {
+    }
+
+    public List<MovimientoDinero> getMovimiento() {
+        return movimiento;
+    }
+
+    public void setMovimiento(List<MovimientoDinero> movimiento) {
+        this.movimiento = movimiento;
     }
 
     public long getIdEmpresa() {

@@ -12,14 +12,14 @@ public class Empleado {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_Empleado", nullable = false)
     private long idEmpleado;
-    @Column(name = "nombreEmpleado", nullable = false)
+    @Column(name = "nombreEmpleado")
     private String nombreEmpleado;
-    @Column(name = "correoEmpleado", unique = true, nullable = false)
+    @Column(name = "correoEmpleado")
     private String correoEmpleado;
     @ManyToOne
-    @JoinColumn(name = "empresaEmpleado", unique = true, nullable = false)
+    @JoinColumn(name = "Empresa_ID")
     private Empresa empresaEmpleado;
-    @Column(name = "rolEmpleado", nullable = false)
+    @Column(name = "rolEmpleado")
     private Rol rolEmpleado;
     public Empleado() {
     }
@@ -57,7 +57,7 @@ public class Empleado {
         this.empresaEmpleado = empresaEmpleado;
     }
 
-    public Rol getRolEmpleado() {
+   public Rol getRolEmpleado() {
         return rolEmpleado;
     }
 
