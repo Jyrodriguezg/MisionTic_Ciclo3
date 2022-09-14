@@ -7,15 +7,15 @@ public class MovimientoDinero {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_movimiento", nullable = false)
     private long id_movientos;
-    @Column(name = "monto_Dinero", nullable = false)
+    @Column(name = "monto_Dinero")
     private long montoDinero;
-    @Column(name = "concepto", nullable = false)
+    @Column(name = "concepto")
     private String concepto;
     @ManyToOne
-    @JoinColumn(name = "Usuario", nullable = false)
+    @JoinColumn(name = "Usuario")
     private Empleado usuarioRegistro;
     @ManyToOne
-    @JoinColumn(name = "empresa", nullable = false)
+    @JoinColumn(name = "empresa")
     private Empresa empresa;
     public MovimientoDinero() {
     }
