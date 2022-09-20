@@ -14,6 +14,7 @@ public class EmpresaRestController {
 
     @GetMapping("/enterprises/{id}")
     public Empresa FindById(@PathVariable int id) {
+
         return empresaService.FindById(id);
     }
     @GetMapping("/enterprises")
@@ -30,6 +31,7 @@ public class EmpresaRestController {
     }
     @DeleteMapping("/enterprises/{id}")
     public void deleteEmpresa(@PathVariable int id){
+
         empresaService.deleteEmpresa(id);
     }
 }
