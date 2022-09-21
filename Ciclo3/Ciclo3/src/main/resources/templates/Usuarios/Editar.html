@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Datos de Usuario</title>
+</head>
+<body>
+  <h1>Datos de Usuario</h1>
+  <a th:href="@{/Usuarios/List}">Usuarios</a>
+    <form th:action="@{/Guardar}" method="post" th:object="${empleado}">
+        <label for="nombreEmpleado"> Nombre: </label>
+        <input type="text" name="nombreEmpleado" th:field="*{nombreEmpleado}"/>
+        <br>
+        <label for="correoEmpleado"> Correo: </label>
+        <input type="text" name="correoEmpleado" th:field="*{correoEmpleado}"/>
+        <br>
+        <select>
+            <option value = "0" selected>Empresa: </option>
+            <option th:each="empresa : ${empresas}"
+                    th:value = "${empresa.idEmpresa}"
+                    th:text = "${empresa.nombreEmpresa}"
+            ></option>
+        </select>
+    </form>
+</body>
+</html>
