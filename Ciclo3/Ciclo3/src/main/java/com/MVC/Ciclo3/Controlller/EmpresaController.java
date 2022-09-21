@@ -23,4 +23,12 @@ public class EmpresaController {
         model.addAttribute("empresas", empresas);
         return "/Empresas/List";
     }
+    @GetMapping("/Empresas/Editar")
+    public String CreateEmpresa(Model model){
+        LOG.log(Level.INFO, "CreateEmpresa");
+
+        Empresa empresa = new Empresa();
+        model.addAttribute("empresa", empresa);
+        return"/Empresas/Editar";
+    }
 }

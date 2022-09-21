@@ -2,9 +2,23 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Datos de Empresa</title>
 </head>
 <body>
-
+    <h1>Datos de Empresa</h1>
+    <a th:href="@{/Empresas/List}">Empresas</a>
+    <form th:action="Guardar" method="post" th:object="${empresa}">
+        <label for="nombreEmpresa">Nombre: </label>
+        <input type="text" name="nombreEmpresa" th:field="*{nombreEmpresa}"/>
+        <br>
+        <label for="direccionEmpresa">Direccion: </label>
+        <input type="text" name="direccionEmpresa" th:field="*{direccionEmpresa}"/>
+        <br>
+        <label for="telefonoEmpresa">Telefono: </label>
+        <input type="text" name="telefonoEmpresa" th:field="*{telefonoEmpresa}"/>
+        <br>
+        <label for="nitEmpresa">Nit: </label>
+        <input type="text" name="nitEmpresa" th:field="*{nitEmpresa}"/>
+    </form>
 </body>
 </html>
