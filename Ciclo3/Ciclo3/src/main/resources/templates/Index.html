@@ -5,7 +5,10 @@
     <title>Inicio</title>
 </head>
 <body>
-    <p th:text="${mensaje}"></p>
-    <h1> Hola Mundo </h1>
+    <h1> Menu </h1>
+    <p th:text="${mensaje}"> Lista </p>
+    <a th:href="@{/Usuarios/List}">Usuarios</a>
+    <a >Empresas</a>
+    <a >Transacciones</a>
 </body>
 </html>
