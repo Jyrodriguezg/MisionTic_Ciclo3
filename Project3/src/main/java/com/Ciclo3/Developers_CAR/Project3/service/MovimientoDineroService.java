@@ -1,6 +1,5 @@
 package com.Ciclo3.Developers_CAR.Project3.service;
 
-import com.Ciclo3.Developers_CAR.Project3.entity.Empresa;
 import com.Ciclo3.Developers_CAR.Project3.entity.MovimientoDinero;
 import com.Ciclo3.Developers_CAR.Project3.repository.IMovimientoDineroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +40,11 @@ public class MovimientoDineroService implements IMovimientoDineroService{
     @Override
     public void deleteMovimientoDinero(int id) {
         movimientoRepository.deleteById((long)id);
+    }
+
+    @Override
+    public List<MovimientoDinero> findByMovimientosId(int id) {
+
+        return movimientoRepository.findByMovimientosId(id);
     }
 }

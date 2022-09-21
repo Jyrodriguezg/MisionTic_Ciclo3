@@ -28,3 +28,29 @@ Empleado
         "empresaEmpleado": null,
         "rolEmpleado": "Admin"
     }
+
+transacciones
+    {
+        "montoDinero": 2000000,
+        "concepto": "Drones",
+        "usuarioRegistro": {
+            "idEmpleado": 1,
+            "nombreEmpleado": "",
+            "correoEmpleado": "",
+            "empresaEmpleado": {
+                "idEmpresa": 1,
+                "nombreEmpresa": "",
+                "direccionEmpresa": "",
+                "telefonoEmpresa": "",
+                "nitEmpresa": ""
+            },
+            "rolEmpleado": "Operario"
+        },
+        "empresa": {
+            "idEmpresa": 1,
+            "nombreEmpresa": "",
+            "direccionEmpresa": "",
+            "telefonoEmpresa": "",
+            "nitEmpresa": ""
+        }
+    }

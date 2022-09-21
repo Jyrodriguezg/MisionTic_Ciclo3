@@ -17,17 +17,18 @@ public class    Empresa {
     private String telefonoEmpresa;
     @Column(name = "nitEmpresa")
     private String nitEmpresa;
-    @OneToMany (mappedBy = "empresa")
-    List <MovimientoDinero> movimiento;
+
+    @OneToMany(mappedBy = "empresa")
+    private List<MovimientoDinero> transaccion;
     public Empresa() {
     }
 
-    public List<MovimientoDinero> getMovimiento() {
-        return movimiento;
+    public List<MovimientoDinero> getTransaccion() {
+        return transaccion;
     }
 
-    public void setMovimiento(List<MovimientoDinero> movimiento) {
-        this.movimiento = movimiento;
+    public void setTransaccion(List<MovimientoDinero> transaccion) {
+        this.transaccion = transaccion;
     }
 
     public long getIdEmpresa() {
