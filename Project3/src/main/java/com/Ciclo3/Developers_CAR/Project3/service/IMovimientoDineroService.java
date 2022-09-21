@@ -16,4 +16,6 @@ public interface IMovimientoDineroService {
     public MovimientoDinero UpdateMovimientoDinero(int id, MovimientoDinero movimiento);
 
     public void deleteMovimientoDinero(int id);
+
+    List<MovimientoDinero> findByMovimientosId(int id);
 }

@@ -15,7 +15,7 @@ public class MovimientoDinero {
     @JoinColumn(name = "Usuario")
     private Empleado usuarioRegistro;
     @ManyToOne
-    @JoinColumn(name = "empresa")
+    @JoinColumn(name = "empresa_ID")
     private Empresa empresa;
     public MovimientoDinero() {
     }
