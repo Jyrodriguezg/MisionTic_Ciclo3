@@ -16,7 +16,7 @@
             <th>Empresa</th>
             <th>Rol</th>
         </tr>
-        <tr th:each="empleado : ${empleados}">
+            <tr th:each="empleado : ${empleados}">
             <td th:text="${empleado.idEmpleado}"></td>
             <td th:text="${empleado.nombreEmpleado}"></td>
             <td th:text="${empleado.correoEmpleado}"></td>
