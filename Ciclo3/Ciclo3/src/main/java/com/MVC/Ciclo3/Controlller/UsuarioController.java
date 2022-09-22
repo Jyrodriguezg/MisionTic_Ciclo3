@@ -8,7 +8,7 @@ import com.MVC.Ciclo3.service.iEmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +23,7 @@ public class UsuarioController {
     private iEmpresaService EmpresaService;
 
     private final Logger LOG = Logger.getLogger(""+UsuarioController.class );
+
     @GetMapping("/Usuarios/List")
     public String getListUsuarios (Model model){
         LOG.log(Level.INFO, "getListUsuarios");
@@ -37,9 +38,24 @@ public class UsuarioController {
         Empleado empleado = new Empleado();
         model.addAttribute("empleado", empleado);
         //Empresa
-        List <Empresa> empresas = EmpresaService.FindAll();
+        List<Empresa> empresas = EmpresaService.FindAll();
         model.addAttribute("empresas", empresas);
         //Rol
+        return "Usuarios/Editar";
+    }
+    @PostMapping("/Guardar")
+    public String guardarEmpleado(Empleado empleado){
+        LOG.log(Level.INFO, "guardarEmpleado");
+        empleado = empleadoservice.createEmpleado(empleado);
+        return "redirect:/Usuarios/List";
+    }
+    @RequestMapping(value = "/Editar/{id}", method = RequestMethod.GET)
+    public String EdtitarEmpleado(@PathVariable("id") int id, Model model){
+        LOG.log(Level.INFO, "EdtitarEmpleado");
+        List<Empresa> empresas = EmpresaService.FindAll();
+        model.addAttribute("empresas", empresas);
+        Empleado empleado = empleadoservice.findById(id);
+        model.addAttribute("empleado", empleado);
         return "Usuarios/Editar";
     }
 }
