@@ -15,13 +15,16 @@
             <th>Correo</th>
             <th>Empresa</th>
             <th>Rol</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
         </tr>
             <tr th:each="empleado : ${empleados}">
-            <td th:text="${empleado.idEmpleado}"></td>
-            <td th:text="${empleado.nombreEmpleado}"></td>
-            <td th:text="${empleado.correoEmpleado}"></td>
-            <td th:text="${empleado.empresaEmpleado.nombreEmpresa}"></td>
-            <td th:text="${empleado.rolEmpleado}"></td>
+                <td th:text="${empleado.idEmpleado}"></td>
+                <td th:text="${empleado.nombreEmpleado}"></td>
+                <td th:text="${empleado.correoEmpleado}"></td>
+                <td th:text="${empleado.empresaEmpleado.nombreEmpresa}"></td>
+                <td th:text="${empleado.rolEmpleado}"></td>
+                <td><a th:href="@{/Editar/} + ${empleado.idEmpleado}" th:text="Editar"></a> </td>
         </tr>
     </table>
 </body>

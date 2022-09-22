@@ -14,6 +14,8 @@ public class Empleado {
     private String nombreEmpleado;
     @Column(name = "correoEmpleado")
     private String correoEmpleado;
+    @Column(name = "contraseña")
+    private String password;
     @ManyToOne
     @JoinColumn(name = "Empresa_ID")
     private Empresa empresaEmpleado;
@@ -63,4 +65,11 @@ public class Empleado {
         this.rolEmpleado = rolEmpleado;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String contraseña) {
+        this.password = contraseña;
+    }
 }
