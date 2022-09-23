@@ -23,18 +23,15 @@ public class EmpresaRestController {
     public List<Empresa> FindAll(){
         return empresaService.FindAll();
     }
- /**   @GetMapping("/enterprises/{id}/movemovements")
-    public List<MovimientoDinero> FindMovemovements(@PathVariable int id){
-        return MovimientoService.FindAll();
-    }*/
+
     @PostMapping("/enterprises")
     public Empresa createdEmpresa(@RequestBody Empresa empresa){
         return empresaService.createdEmpresa(empresa);
     }
-  /**  @PutMapping("/enterprises/{id}")
+   @PutMapping("/enterprises/{id}")
     public Empresa UpdateEmpresa(@PathVariable int id , @RequestBody Empresa empresa){
         return empresaService.UpdateEmpresa(id,empresa);
-    }*/
+    }
     @DeleteMapping("/enterprises/{id}")
     public void deleteEmpresa(@PathVariable int id){
 

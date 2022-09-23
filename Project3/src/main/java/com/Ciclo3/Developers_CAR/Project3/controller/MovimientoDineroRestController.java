@@ -16,35 +16,29 @@ public class MovimientoDineroRestController {
     private IMovimientoDineroService movimientoDineroService;
 
 
-   // @GetMapping("/enterprises/{id}/movements")
-    // public MovimientoDinero FindById(@PathVariable int id) {
-     //   return movimientoDineroService.FindById(id);
-    //}
+    @GetMapping("/movements/{id}")
+     public MovimientoDinero FindById(@PathVariable int id) {
+       return movimientoDineroService.FindById(id);
+    }
     @GetMapping("/enterprises/{id}/movements")
-    public List<MovimientoDinero>  FindById(@PathVariable int id){
-        List<MovimientoDinero> movimientos = movimientoDineroService.findByMovimientosId(id);
+    public List<MovimientoDinero>  FindByEmpresa(@PathVariable int id){
+        return movimientoDineroService.findByempresa(id);
+    }
+    @GetMapping("/movements")
+    public List<MovimientoDinero>  FindAll(){
+         List<MovimientoDinero> movimientos = movimientoDineroService.FindAll();
         return movimientos;
     }
 
- /**   @GetMapping("/tutorials/{tutorialId}/comments")
-    public ResponseEntity<List<Comment>> getAllCommentsByTutorialId(@PathVariable(value = "tutorialId") Long tutorialId) {
-        if (!tutorialRepository.existsById(tutorialId)) {
-            throw new ResourceNotFoundException("Not found Tutorial with id = " + tutorialId);
-        }
-
-        List<Comment> comments = commentRepository.findByTutorialId(tutorialId);
-        return new ResponseEntity<>(comments, HttpStatus.OK);
-    }*/
-
-    @PostMapping("/enterprises/{id}/movements")
+    @PostMapping("/movements/{id}")
     public MovimientoDinero createdMovimientoDinero(@RequestBody MovimientoDinero movimiento){
         return movimientoDineroService.createdMovimientoDinero(movimiento);
     }
-    @PutMapping("/enterprises/{id}/movements")
+    @PutMapping("/movements/{id}")
     public MovimientoDinero UpdateMovimientoDinero(@PathVariable int id , @RequestBody MovimientoDinero movimiento){
         return movimientoDineroService.UpdateMovimientoDinero(id,movimiento);
     }
-    @DeleteMapping("/enterprises/{id}/movements")
+    @DeleteMapping("/movements/{id}")
     public void deleteMovimientoDinero(@PathVariable int id){
         movimientoDineroService.deleteMovimientoDinero(id);
     }

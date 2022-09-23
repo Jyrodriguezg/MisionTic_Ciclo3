@@ -18,17 +18,7 @@ public class    Empresa {
     @Column(name = "nitEmpresa")
     private String nitEmpresa;
 
-    @OneToMany(mappedBy = "empresa")
-    private List<MovimientoDinero> transaccion;
     public Empresa() {
-    }
-
-    public List<MovimientoDinero> getTransaccion() {
-        return transaccion;
-    }
-
-    public void setTransaccion(List<MovimientoDinero> transaccion) {
-        this.transaccion = transaccion;
     }
 
     public long getIdEmpresa() {
