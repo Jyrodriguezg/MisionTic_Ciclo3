@@ -2,6 +2,7 @@ package com.Ciclo3.Developers_CAR.Project3.service;
 
 import com.Ciclo3.Developers_CAR.Project3.entity.MovimientoDinero;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface IMovimientoDineroService {
@@ -16,6 +17,5 @@ public interface IMovimientoDineroService {
     public MovimientoDinero UpdateMovimientoDinero(int id, MovimientoDinero movimiento);
 
     public void deleteMovimientoDinero(int id);
-
-    List<MovimientoDinero> findByMovimientosId(int id);
+    public abstract ArrayList<MovimientoDinero> findByempresa(long id);
 }

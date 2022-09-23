@@ -1,4 +1,7 @@
 package com.Ciclo3.Developers_CAR.Project3.entity;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 @Entity
 @Table(name="Movientos")
@@ -15,6 +18,7 @@ public class MovimientoDinero {
     @JoinColumn(name = "Usuario")
     private Empleado usuarioRegistro;
     @ManyToOne
+    //@OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "empresa_ID")
     private Empresa empresa;
     public MovimientoDinero() {
