@@ -49,7 +49,7 @@ public class UsuarioController {
         empleado = empleadoservice.createEmpleado(empleado);
         return "redirect:/Usuarios/List";
     }
-    @RequestMapping(value = "/Editar/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/EditarUsuario/{id}", method = RequestMethod.GET)
     public String EdtitarEmpleado(@PathVariable("id") int id, Model model){
         LOG.log(Level.INFO, "EdtitarEmpleado");
         List<Empresa> empresas = EmpresaService.FindAll();

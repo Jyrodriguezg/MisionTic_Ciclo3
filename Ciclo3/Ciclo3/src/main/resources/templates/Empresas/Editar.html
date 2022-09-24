@@ -7,7 +7,8 @@
 <body>
     <h1>Datos de Empresa</h1>
     <a th:href="@{/Empresas/List}">Empresas</a>
-    <form th:action="Guardar" method="post" th:object="${empresa}">
+    <form th:action="@{/GuardarEmpresa}" method="post" th:object="${empresa}">
+        <input type="hidden" name="idEmpresa" th:field="*{idEmpresa}"/>
         <label for="nombreEmpresa">Nombre: </label>
         <input type="text" name="nombreEmpresa" th:field="*{nombreEmpresa}"/>
         <br>
@@ -19,6 +20,8 @@
         <br>
         <label for="nitEmpresa">Nit: </label>
         <input type="text" name="nitEmpresa" th:field="*{nitEmpresa}"/>
+        <br>
+        <input type="submit" name="Guardar" value="Guardar"/>
     </form>
 </body>
 </html>

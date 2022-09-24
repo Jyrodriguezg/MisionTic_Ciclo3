@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Movimientos de la Empresa ${empresas}</title>
+</head>
+<body>
+    <h1>Movimientos de la Empresa</h1>
+    <a th:href="@{/Empresas/List}">Empresas</a>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Monto</th>
+            <th>Concepto</th>
+            <th>Usuario</th>
+        </tr>
+        <tr th:each="transaccion : ${transacciones}">
+            <td th:text="${transaccion.id_movientos}"></td>
+            <td th:text="${transaccion.montoDinero}"></td>
+            <td th:text="${transaccion.concepto}"></td>
+            <td th:text="${transaccion.usuarioRegistro.nombreEmpleado}"></td>
+        </tr>
+    </table>
+</body>
+</html>
