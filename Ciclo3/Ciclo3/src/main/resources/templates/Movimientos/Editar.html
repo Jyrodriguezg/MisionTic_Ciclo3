@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Transacciones</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}">
+</head>
+<body>
+    <header th:replace="layout/plantilla :: header"></header>
+    <h2>Datos de Transaccion</h2>
+    <a th:href="@{/Movimientos/List}">Transacciones</a>
+    <form th:action="@{/GuardarMov}" method="post" th:object="${Transaccion}">
+        <input type="hidden" name="idEmpleado" th:field="*{id_movientos}"/>
+        <label for="montoDinero"> Monto: </label>
+        <input type="number" name="montoDinero" th:field="*{montoDinero}"/>
+        <span th:if="${#fields.hasErrors('montoDinero')}" th:errors="*{montoDinero}"></span>
+        <br>
+        <label for="concepto"> Concepto: </label>
+        <input type="text" name="concepto" th:field="*{concepto}"/>
+        <span th:if="${#fields.hasErrors('concepto')}" th:errors="*{concepto}"></span>
+        <br>
+        <label for="usuarioRegistro"> Usuario: </label>
+        <select th:field="*{usuarioRegistro.idEmpleado}" name="usuarioRegistro">
+            <option value = "0" selected>Seleccione Usuario</option>
+            <option th:each="usuarioRegistro : ${usuarioRegistro}"
+                    th:value = "${usuarioRegistro.idEmpleado}"
+                    th:text = "${usuarioRegistro.nombreEmpleado}"
+            ></option>
+        </select>
+
+        <br>
+        <label for="empresa"> Empresa: </label>
+        <select th:field="*{empresa.idEmpresa}" name="empresa">
+            <option value = "0" selected>Seleccione Empresa</option>
+            <option th:each="empresa : ${empresa}"
+                    th:value = "${empresa.idEmpresa}"
+                    th:text = "${empresa.nombreEmpresa}"
+            ></option>
+        </select>
+
+        <br>
+        <input type="submit" name="GuardarMov" value="Guardar"/>
+    </form>
+    <footer th:replace="layout/plantilla :: footer"></footer>
+</body>
+</html>

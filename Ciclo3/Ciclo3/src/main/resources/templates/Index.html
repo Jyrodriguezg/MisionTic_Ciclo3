@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Inicio</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}">
 </head>
 <body>
-    <h1> Menu </h1>
+    <header th:replace="layout/plantilla :: header"></header>
+    <h2> Menu </h2>
     <p th:text="${mensaje}"> Lista </p>
     <a th:href="@{/Usuarios/List}">Usuarios</a>
     <a th:href="@{/Empresas/List}">Empresas</a>
-    <a >Transacciones</a>
+    <a th:href="@{/Movimientos/List}">Transacciones</a>
+    <footer th:replace="layout/plantilla :: footer"></footer>
 </body>
 </html>

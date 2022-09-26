@@ -8,8 +8,13 @@ import com.MVC.Ciclo3.service.iEmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Errors;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -44,10 +49,20 @@ public class UsuarioController {
         return "Usuarios/Editar";
     }
     @PostMapping("/Guardar")
-    public String guardarEmpleado(Empleado empleado){
+    public String guardarEmpleado(@Valid Empleado empleado, BindingResult errores, Model modelo){
         LOG.log(Level.INFO, "guardarEmpleado");
+       /** if (empleado.getEmpresaEmpleado().getIdEmpresa() == 0) {
+            String propertyPath = "violation.getPropertyPath().toString()";
+            String message = "No puede ser Null";
+            FieldError field = new FieldError();
+            errores.addError(field);
+        }*/
+        if(errores.hasErrors()){
+            return "Usuarios/Editar";
+        }
         empleado = empleadoservice.createEmpleado(empleado);
         return "redirect:/Usuarios/List";
+
     }
     @RequestMapping(value = "/EditarUsuario/{id}", method = RequestMethod.GET)
     public String EdtitarEmpleado(@PathVariable("id") int id, Model model){

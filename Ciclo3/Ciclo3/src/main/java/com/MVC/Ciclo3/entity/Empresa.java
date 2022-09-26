@@ -1,5 +1,6 @@
 package com.MVC.Ciclo3.entity;
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @Entity
