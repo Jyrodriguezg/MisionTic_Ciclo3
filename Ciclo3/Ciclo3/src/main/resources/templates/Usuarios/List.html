@@ -3,28 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista de Empleados</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}">
 </head>
 <body>
   <h1>Lista de Empleados</h1>
   <a th:href="@{/}">Home</a>
-  <a th:href="@{/Usuarios/Editar}">Nuevo</a>
+  <a th:href="@{/Usuarios/crear}">Nuevo</a>
     <table border ="1">
         <tr>
-            <th>ID</th>
             <th>Nombre</th>
             <th>Correo</th>
             <th>Empresa</th>
             <th>Rol</th>
             <th>Editar</th>
-            <th>Eliminar</th>
         </tr>
             <tr th:each="empleado : ${empleados}">
-                <td th:text="${empleado.idEmpleado}"></td>
                 <td th:text="${empleado.nombreEmpleado}"></td>
                 <td th:text="${empleado.correoEmpleado}"></td>
                 <td th:text="${empleado.empresaEmpleado.nombreEmpresa}"></td>
                 <td th:text="${empleado.rolEmpleado}"></td>
-                <td><a th:href="@{/Editar/} + ${empleado.idEmpleado}" th:text="Editar"></a> </td>
+                <td><a th:href="@{/EditarUsuario/} + ${empleado.idEmpleado}" th:text="Editar"></a> </td>
         </tr>
     </table>
 </body>

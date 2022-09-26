@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Datos de Usuario</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}">
 </head>
 <body>
-  <h1>Datos de Usuario</h1>
+    <header th:replace="layout/plantilla :: header"></header>
+  <h2>Datos de Usuario</h2>
   <a th:href="@{/Usuarios/List}">Usuarios</a>
     <form th:action="@{/Guardar}" method="post" th:object="${empleado}">
         <input type="hidden" name="idEmpleado" th:field="*{idEmpleado}"/>
         <label for="nombreEmpleado"> Nombre: </label>
         <input type="text" name="nombreEmpleado" th:field="*{nombreEmpleado}"/>
+        <span th:if="${#fields.hasErrors('nombreEmpleado')}" th:errors="*{nombreEmpleado}"></span>
         <br>
         <label for="correoEmpleado"> Correo: </label>
         <input type="text" name="correoEmpleado" th:field="*{correoEmpleado}"/>
+        <span th:if="${#fields.hasErrors('correoEmpleado')}" th:errors="*{correoEmpleado}"></span>
         <br>
         <label for="password"> Contraseña: </label>
         <input type="password" name="password" th:field="*{password}"/>
+        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
         <br>
         <label for="Empresa"> Empresa: </label>
         <select th:field="*{empresaEmpleado.idEmpresa}" name="Empresa">
@@ -26,17 +31,20 @@
                     th:text = "${empresa.nombreEmpresa}"
             ></option>
         </select>
+
         <br>
         <label for="rolEmpleado"> Perfil: </label>
         <select th:field="*{rolEmpleado}" name="rolEmpleado">
-            <option value = "0" selected>Seleccione Perfil</option>
+            <option value = "" selected>Seleccione Perfil</option>
             <option th:each="rol : ${T(com.MVC.Ciclo3.entity.Rol).values()}"
                     th:value = "${rol}"
                     th:text = "${rol}"
             ></option>
         </select>
+        <span th:if="${#fields.hasErrors('rolEmpleado')}" th:errors="*{rolEmpleado}"></span>
         <br>
         <input type="submit" name="Guardar" value="Guardar"/>
     </form>
+    <footer th:replace="layout/plantilla :: footer"></footer>
 </body>
 </html>

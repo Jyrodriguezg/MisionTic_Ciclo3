@@ -30,7 +30,7 @@ public class MovimientoDineroRestController {
         return movimientos;
     }
 
-    @PostMapping("/movements/{id}")
+    @PostMapping("/movements")
     public MovimientoDinero createdMovimientoDinero(@RequestBody MovimientoDinero movimiento){
         return movimientoDineroService.createdMovimientoDinero(movimiento);
     }

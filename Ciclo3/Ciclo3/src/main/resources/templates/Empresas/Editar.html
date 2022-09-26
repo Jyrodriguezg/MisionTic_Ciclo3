@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Datos de Empresa</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.0/css/bootstrap.min.css}">
 </head>
 <body>
-    <h1>Datos de Empresa</h1>
+<header th:replace="layout/plantilla :: header"></header>
+    <h2>Datos de Empresa</h2>
     <a th:href="@{/Empresas/List}">Empresas</a>
-    <form th:action="Guardar" method="post" th:object="${empresa}">
+    <form th:action="@{/GuardarEmpresa}" method="post" th:object="${empresa}">
+        <input type="hidden" name="idEmpresa" th:field="*{idEmpresa}"/>
         <label for="nombreEmpresa">Nombre: </label>
         <input type="text" name="nombreEmpresa" th:field="*{nombreEmpresa}"/>
+        <span th:if="${#fields.hasErrors('nombreEmpresa')}" th:errors="*{nombreEmpresa}"></span>
         <br>
         <label for="direccionEmpresa">Direccion: </label>
         <input type="text" name="direccionEmpresa" th:field="*{direccionEmpresa}"/>
+        <span th:if="${#fields.hasErrors('direccionEmpresa')}" th:errors="*{direccionEmpresa}"></span>
         <br>
         <label for="telefonoEmpresa">Telefono: </label>
         <input type="text" name="telefonoEmpresa" th:field="*{telefonoEmpresa}"/>
+        <span th:if="${#fields.hasErrors('telefonoEmpresa')}" th:errors="*{telefonoEmpresa}"></span>
         <br>
         <label for="nitEmpresa">Nit: </label>
         <input type="text" name="nitEmpresa" th:field="*{nitEmpresa}"/>
+        <span th:if="${#fields.hasErrors('nitEmpresa')}" th:errors="*{nitEmpresa}"></span>
+        <br>
+        <input type="submit" name="Guardar" value="Guardar"/>
     </form>
+<footer th:replace="layout/plantilla :: footer"></footer>
 </body>
 </html>

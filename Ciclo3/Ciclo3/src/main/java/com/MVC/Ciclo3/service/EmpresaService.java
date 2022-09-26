@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EmpresaService  implements iEmpresaService{
+public class EmpresaService  implements IEmpresaService {
     @Autowired
     public IEmpresaRepósitory empresaRepository;
     @Override

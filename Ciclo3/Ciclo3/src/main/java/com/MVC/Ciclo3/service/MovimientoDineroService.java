@@ -5,6 +5,7 @@ import com.MVC.Ciclo3.repository.IMovimientoDineroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,5 +41,9 @@ public class MovimientoDineroService implements IMovimientoDineroService{
     @Override
     public void deleteMovimientoDinero(int id) {
         movimientoRepository.deleteById((long)id);
+    }
+    @Override
+    public ArrayList<MovimientoDinero> findByempresa(long id) {
+        return movimientoRepository.findByempresa(id);
     }
 }

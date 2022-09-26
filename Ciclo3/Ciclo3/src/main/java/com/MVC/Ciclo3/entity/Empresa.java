@@ -1,5 +1,6 @@
 package com.MVC.Ciclo3.entity;
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @Entity
@@ -9,26 +10,22 @@ public class    Empresa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_Empresa", nullable = false)
     private long idEmpresa;
+    @javax.validation.constraints.NotEmpty
     @Column(name = "nombreEmpresa")
     private String nombreEmpresa;
+    @javax.validation.constraints.NotEmpty
     @Column(name = "direccionEmpresa")
     private String direccionEmpresa;
+    @javax.validation.constraints.NotEmpty
     @Column(name = "telefonoEmpresa")
     private String telefonoEmpresa;
+    @javax.validation.constraints.NotEmpty
     @Column(name = "nitEmpresa")
     private String nitEmpresa;
-    @OneToMany (mappedBy = "empresa")
-    List <MovimientoDinero> movimiento;
+
     public Empresa() {
     }
 
-    public List<MovimientoDinero> getMovimiento() {
-        return movimiento;
-    }
-
-    public void setMovimiento(List<MovimientoDinero> movimiento) {
-        this.movimiento = movimiento;
-    }
 
     public long getIdEmpresa() {
         return idEmpresa;
