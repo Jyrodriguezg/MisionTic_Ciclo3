@@ -2,20 +2,15 @@ package com.MVC.Ciclo3.Controlller;
 
 import com.MVC.Ciclo3.entity.Empleado;
 import com.MVC.Ciclo3.entity.Empresa;
-import com.MVC.Ciclo3.entity.Rol;
 import com.MVC.Ciclo3.service.IEmpleadoService;
-import com.MVC.Ciclo3.service.iEmpresaService;
+import com.MVC.Ciclo3.service.IEmpresaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.Errors;
-import org.springframework.validation.FieldError;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,7 +20,7 @@ public class UsuarioController {
     @Autowired
     private IEmpleadoService empleadoservice;
     @Autowired
-    private iEmpresaService EmpresaService;
+    private IEmpresaService EmpresaService;
 
     private final Logger LOG = Logger.getLogger(""+UsuarioController.class );
 
@@ -36,7 +31,7 @@ public class UsuarioController {
         model.addAttribute("empleados", empleados);
      return "Usuarios/List";
     }
-    @GetMapping("/Usuarios/Editar")
+    @GetMapping("/Usuarios/crear")
     public String CreateEmpleado(Model model){
         LOG.log(Level.INFO, "NuevoEmpleado");
         //Empleado
@@ -45,7 +40,7 @@ public class UsuarioController {
         //Empresa
         List<Empresa> empresas = EmpresaService.FindAll();
         model.addAttribute("empresas", empresas);
-        //Rol
+
         return "Usuarios/Editar";
     }
     @PostMapping("/Guardar")

@@ -10,10 +10,9 @@
     <header th:replace="layout/plantilla :: header"></header>
     <h2>Lista de Transacciones</h2>
     <a th:href="@{/}">Home</a>
-    <a th:href="@{/Movimientos/Editar}">Nuevo</a>
+    <a th:href="@{/Movimientos/crear}">Nuevo</a>
     <table border="1">
         <tr>
-            <th>ID</th>
             <th>Monto</th>
             <th>Concepto</th>
             <th>Usuario</th>
@@ -21,12 +20,11 @@
             <th>Editar</th>
         </tr>
         <tr th:each="transaccion : ${transaccion}">
-            <td th:text="${transaccion.id_movientos}"></td>
             <td th:text="${transaccion.montoDinero}"></td>
             <td th:text="${transaccion.concepto}"></td>
             <td th:text="${transaccion.usuarioRegistro.nombreEmpleado}"></td>
             <td th:text="${transaccion.empresa.nombreEmpresa}"></td>
-            <td><a th:href="@{/EditarMov/} + ${transaccion.id_movientos}" th:text="Editar"></a> </td>
+            <td><a th:href="@{/EditarMov/} + ${transaccion.Id_movimiento}" th:text="Editar"></a> </td>
         </tr>
     </table>
     <footer th:replace="layout/plantilla :: footer"></footer>

@@ -1,15 +1,19 @@
 package com.MVC.Ciclo3.entity;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
 @Entity
 @Table(name="Movientos")
 public class MovimientoDinero {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_movimiento", nullable = false)
-    private long id_movientos;
+    private long id_movimiento;
+    @javax.validation.constraints.NotEmpty
     @Column(name = "monto_Dinero")
-    private long montoDinero;
+    private String montoDinero;
+    @javax.validation.constraints.NotEmpty
     @Column(name = "concepto")
     private String concepto;
     @ManyToOne
@@ -29,19 +33,19 @@ public class MovimientoDinero {
         this.empresa = empresa;
     }
 
-    public long getId_movientos() {
-        return id_movientos;
+    public long getId_movimiento() {
+        return id_movimiento;
     }
 
-    public void setId_movientos(long id_movientos) {
-        this.id_movientos = id_movientos;
+    public void setId_movimiento(long Id_movimiento) {
+        this.id_movimiento = id_movimiento;
     }
 
-    public long getMontoDinero() {
+    public String getMontoDinero() {
         return montoDinero;
     }
 
-    public void setMontoDinero(long montoDinero) {
+    public void setMontoDinero(String montoDinero) {
         this.montoDinero = montoDinero;
     }
 

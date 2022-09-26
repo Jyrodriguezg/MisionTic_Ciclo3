@@ -10,12 +10,16 @@ public class    Empresa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_Empresa", nullable = false)
     private long idEmpresa;
+    @javax.validation.constraints.NotEmpty
     @Column(name = "nombreEmpresa")
     private String nombreEmpresa;
+    @javax.validation.constraints.NotEmpty
     @Column(name = "direccionEmpresa")
     private String direccionEmpresa;
+    @javax.validation.constraints.NotEmpty
     @Column(name = "telefonoEmpresa")
     private String telefonoEmpresa;
+    @javax.validation.constraints.NotEmpty
     @Column(name = "nitEmpresa")
     private String nitEmpresa;
 

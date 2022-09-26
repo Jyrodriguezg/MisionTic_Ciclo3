@@ -4,7 +4,7 @@ import com.MVC.Ciclo3.entity.Empresa;
 
 import java.util.List;
 
-public interface iEmpresaService{
+public interface IEmpresaService {
     public Empresa FindById(int id);
 
     public List<Empresa> FindAll();
