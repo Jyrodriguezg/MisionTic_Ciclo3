@@ -11,10 +11,9 @@
     <h2>Datos de Transaccion</h2>
     <a th:href="@{/Movimientos/List}">Transacciones</a>
     <form th:action="@{/GuardarMov}" method="post" th:object="${transaccion}">
-        <input type="hidden" name="id_movimiento" th:field="*{Id_movimiento}"/>
+        <input type="hidden" name="idmovimiento" th:field="*{id_movimiento}"/>
         <label for="montoDinero"> Monto: </label>
         <input type="number" name="montoDinero" th:field="*{montoDinero}"/>
-        <span th:if="${#fields.hasErrors('montoDinero')}" th:errors="*{montoDinero}"></span>
         <br>
         <label for="concepto"> Concepto: </label>
         <input type="text" name="concepto" th:field="*{concepto}"/>
@@ -28,7 +27,6 @@
                     th:text = "${empleados.nombreEmpleado}"
             ></option>
         </select>
-
         <br>
         <label for="empresa"> Empresa: </label>
         <select th:field="*{empresa.idEmpresa}" name="empresa">
@@ -38,7 +36,6 @@
                     th:text = "${empresa.nombreEmpresa}"
             ></option>
         </select>
-
         <br>
         <input type="submit" name="Guardar" value="Guardar"/>
     </form>
