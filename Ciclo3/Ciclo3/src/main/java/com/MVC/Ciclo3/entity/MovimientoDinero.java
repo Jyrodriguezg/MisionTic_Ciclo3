@@ -10,9 +10,8 @@ public class MovimientoDinero {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_movimiento", nullable = false)
     private long id_movimiento;
-    @javax.validation.constraints.NotEmpty
     @Column(name = "monto_Dinero")
-    private String montoDinero;
+    private int montoDinero;
     @javax.validation.constraints.NotEmpty
     @Column(name = "concepto")
     private String concepto;
@@ -24,45 +23,34 @@ public class MovimientoDinero {
     private Empresa empresa;
     public MovimientoDinero() {
     }
-
-    public Empresa getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
-    }
-
     public long getId_movimiento() {
         return id_movimiento;
     }
-
-    public void setId_movimiento(long Id_movimiento) {
+    public void setId_movimiento(long id_movimiento) {
         this.id_movimiento = id_movimiento;
     }
-
-    public String getMontoDinero() {
+    public int getMontoDinero() {
         return montoDinero;
     }
-
-    public void setMontoDinero(String montoDinero) {
+    public void setMontoDinero(int montoDinero) {
         this.montoDinero = montoDinero;
     }
-
     public String getConcepto() {
         return concepto;
     }
-
     public void setConcepto(String concepto) {
         this.concepto = concepto;
     }
-
     public Empleado getUsuarioRegistro() {
         return usuarioRegistro;
     }
-
     public void setUsuarioRegistro(Empleado usuarioRegistro) {
         this.usuarioRegistro = usuarioRegistro;
     }
-
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
 }

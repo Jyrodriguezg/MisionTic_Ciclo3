@@ -24,7 +24,7 @@
             <td th:text="${transaccion.concepto}"></td>
             <td th:text="${transaccion.usuarioRegistro.nombreEmpleado}"></td>
             <td th:text="${transaccion.empresa.nombreEmpresa}"></td>
-            <td><a th:href="@{/EditarMov/} + ${transaccion.Id_movimiento}" th:text="Editar"></a> </td>
+            <td><a th:href="@{/EditarMov/} + ${transaccion.id_movimiento}" th:text="Editar"></a> </td>
         </tr>
     </table>
     <footer th:replace="layout/plantilla :: footer"></footer>

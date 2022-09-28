@@ -30,7 +30,7 @@ public class MovimientosController {
     @GetMapping("/Movimientos/List")
     public String getListMovimientos(Model model) {
         LOG.log(Level.INFO, "getListMovimientos");
-        List<MovimientoDinero> movimientos = transaccionService.FindAll();
+        List<MovimientoDinero> movimientos =  transaccionService.FindAll();
         model.addAttribute("transaccion", movimientos);
         return "Movimientos/List";
     }
@@ -49,26 +49,26 @@ public class MovimientosController {
         return "Movimientos/Editar";
     }
     @PostMapping("/GuardarMov")
-    public String guardarMov(@Valid MovimientoDinero movimiento, BindingResult errores, Model modelo){
+    public String guardarMov(@Valid MovimientoDinero movimiento, BindingResult errors, Model model){
         LOG.log(Level.INFO, "guardarMov");
-        if(errores.hasErrors()){
-            return "Movimientos/Editar";
-        }
+        //if(errors.hasErrors()){
+            //return "Movimientos/Editar";
+        //}
         movimiento = transaccionService.createdMovimientoDinero(movimiento);
         return "redirect:/Movimientos/List";
     }
     @RequestMapping(value = "/EditarMov/{id}", method = RequestMethod.GET)
     public String EdtitarMovimientos(@PathVariable("id") int id, Model model){
         LOG.log(Level.INFO, "EdtitarMovimientos");
+        //Movimiento
+        MovimientoDinero Movimiento = transaccionService.FindById(id);
+        model.addAttribute("transaccion", Movimiento);
         //Empleado
         List<Empleado> empleados = EmpleadoService.findAll();
         model.addAttribute("empleados", empleados);
         //Empresa
         List<Empresa> empresa = empresaService.FindAll();
         model.addAttribute("empresa", empresa);
-        //Movimiento
-        MovimientoDinero Movimiento = transaccionService.FindById(id);
-        model.addAttribute("transaccion", Movimiento);
         return "Movimientos/Editar";
     }
 }
